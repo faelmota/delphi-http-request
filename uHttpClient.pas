@@ -5,7 +5,7 @@ interface
 uses
     Classes, System.SysUtils, System.Generics.Collections,
     DBXJSON, XMLDoc, RegularExpressions, DCPbase64, uHttpResponse,
-    System.Math, StrUtils, IdURI, IdHTTP, IdSSLOpenSSL;
+    System.Math, StrUtils, IdURI, IdHTTP, IdSSLOpenSSL, uHttpException;
 
 type
     THttpClient = class
@@ -84,8 +84,6 @@ type
 implementation
 
 { THttpClient }
-
-uses uHttpException;
 
 function THttpClient.SetBody(body: TStringStream; const AOwns: Boolean = True): THttpClient;
 begin
